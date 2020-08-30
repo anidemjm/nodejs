@@ -1,0 +1,22 @@
+{
+    "film1": {
+        "title": "El Señor de los Gramillos",
+        "length": 120
+    },
+    "film2": {
+        "title": "Scary Movie",
+        "length": 120
+    },
+    "film3": {
+        "title": "FBI - Frikis Buscan Incordiar",
+        "length": 120
+    },
+    "film4": {
+        "title": "El Resplandor",
+        "length": 120
+    },
+    "film5": {
+        "title": "Up",
+        "length": 120
+    }
+}

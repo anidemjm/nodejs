@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de libros</title>
+</head>
+<body>
+    <p>{{#bold}}prueba{{/bold}}</p>
+    <p>CON</p>
+    {{#each nav ~}}
+    <a href="{{url}}">
+        {{~#if test}}
+        {{~title}}
+        {{~^~}}
+        Empty
+        {{~/if~}}
+    </a>
+    {{~/each}}
+
+    <p>SIN</p>
+    {{#each nav}}
+    <a href="{{url}}">
+        {{#if test}}
+        {{title}}
+        {{^}}
+        Empty
+        {{/if}}
+    </a>
+    {{~/each}}
+
+    {{!-- Inicio del libro1 --}}
+    {{#with libro1}}
+    <h1>{{ titulo }}</h1>
+    <ul>
+        <li>{{{ autor }}}</li>
+        <li>{{ edicion }}</li>
+        <li>{{ personajes }}</li>
+    </ul>
+    {{#unless imdb}}
+    <p>La película no tiene propiedad IMDB</p>
+    {{/unless}}
+    {{else}}
+    <p>No existe el libro</p>
+    {{/with}}
+    <br>
+    <h1>{{ libro2.titulo }}</h1>
+    <ul>
+        <li>{{ libro2.autor }}</li>
+        <li>{{ libro2.edicion }}</li>
+    </ul>
+    <h3>Listado de personajes</h3>
+    <ul>
+        {{#each libro2.personajes}}
+        <li>{{this}}</li>
+        <p>La clave es {{@key}}</p>
+        <p>Iteración nº {{@index}}</p>
+        <img src='img/{{this}}.png' alt='{{this}}'>
+        {{/each}}
+    </ul>
+    {{#if libro2.imdb}}
+    <p>La película está en imdb</p>
+    {{else}}
+    <p>La película no está en imdb</p>
+    {{/if}}
+</body>
+</html>

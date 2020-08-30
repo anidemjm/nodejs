@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Libros</title>
+</head>
+<body>
+    {{! Aquí empieza mi plantilla con Handlebars }}
+    <ul>
+        {{#each libros}}
+            {{#with this}}
+                <h1>{{titulo}}</h1>
+                <p>El autor es {{autor}}.</p>
+                {{~#if anioPublicacion ~}}
+                    <p>El año de publicación es: {{anioPublicacion}}</p>
+                {{~/if~}}
+                <p>El libro se ha publicado en edición: {{edicion}}</p>
+                {{#if amazon}}
+                    {{!-- <p>{{#mayoredad 'edad' 20}}Puedes comprarlo en Amazon {{/mayoredad}}</p> --}}
+                {{else}}
+                    <p>No está disponible en Amazon</p>
+                {{/if}}
+                <p>Personajes que aparecen en el libro:</p>
+                <ul>
+                    {{#each personajes}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            {{/with}}
+        {{/each}} 
+    </ul>
+    {{!-- {{> copyright }} --}}
+
+</body>
+</html>

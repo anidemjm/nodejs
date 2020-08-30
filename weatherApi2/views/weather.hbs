@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El tiempo en {{ name }}</title>
+</head>
+<body>
+    <h1>El tiempo en {{#mayusculas}}{{name}}{{/mayusculas}}</h1>
+    {{#with coord}}
+    <p>Lat: {{lat}} | Long: {{lon}}</p>
+    {{/with}}
+    <h2>Temperatura actual</h2>
+    <p>{{#alertatemp}}{{main.temp}}{{/alertatemp}}</p>
+    {{#with weather}}
+        {{#with [0]}}
+            <img src='http://openweathermap.org/img/wn/{{icon}}@4x.png' alt='{{description}}'>
+        {{/with}}
+    {{/with}}
+    {{!-- {{#alertatemp}}
+        Alerta
+    {{/alertatemp}} --}}
+</body>
+</html>
