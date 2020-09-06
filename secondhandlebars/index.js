@@ -1,6 +1,7 @@
 const fs = require("fs");
 const handlebars = require("handlebars");
 const express = require("express");
+const { homedir } = require("os");
 
 const inFile = "./views/index.hbs";
 const outFile = "./public/index.html";
